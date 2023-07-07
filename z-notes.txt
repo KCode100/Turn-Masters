@@ -1,0 +1,17 @@
+Game Duel / Turn Masters
+
+Settings
+Difficulty
+Player names
+
+
+Game rounds
+Correct or incorrect sum, 5 seconds timer
+Sillier face - AI recognition?
+Rock, Paper, Scissors
+Press button after ?? seconds - closest wins
+(X and O)
+
+Features
+Save profile photo
+Save scores
