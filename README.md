@@ -1,18 +1,18 @@
 # **Convert a web app into a mobile app and deploy to app stores!**
 
-**Will it be a native app? **No
+**Will it be a native app?** No
 
-**Can it be any website? **Yes
+**Can it be any website?** Yes
 
-**Is it easy to set up? **Yes
+**Is it easy to set up?** Yes
 
-**Does it work on IOS and Android? **Yes
+**Does it work on IOS and Android?** Yes
 
-**Do I have to upload to app stores to use it? **No, you can export as an .APK and share it
+**Do I have to upload to app stores to use it?** No, you can export as an .APK and share it
 
 **Does it work with frontend frameworks like React, Nextjs etc?** Yes, anything that “builds” into a static folder.
 
-**What do I need to get started? **To preview the app in a native android/ios environment, you should have Android Studio and XCode simulators installed on your computer.
+**What do I need to get started?** To preview the app in a native android/ios environment, you should have Android Studio and XCode simulators installed on your computer.
 
 **How does it work?** “Capacitor” is a wrapper around the web pages and displays it in a native ”web view”. The site is hosted locally from the device, so all the pages/files are inside the mobile app’s code, so no need to deploy it on a static hosting provider. You can have backend functionality too by making requests from the frontend.
 
