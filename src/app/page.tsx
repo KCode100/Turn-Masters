@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -18,7 +17,7 @@ export default function Home() {
           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Multi Player</h5>
           <p className="text-xs font-normal text-gray-700 dark:text-gray-400">14 players online now</p>
         </Link>
-        <Link href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+        <Link href="/high-scores" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">High Scores</h5>
           <p className="text-xs font-normal text-gray-700 dark:text-gray-400">Username, profile</p>
         </Link>
@@ -34,15 +33,6 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* By{' '}
-          <Image
-            src="/vercel.svg"
-            alt="Vercel Logo"
-            className="dark:invert"
-            width={100}
-            height={24}
-            priority
-          /> */}
           <img src="/bykivi-transparent.png" alt="Bykivi logo" width={100} />
           <p className='text-xs'>Bespoke Software Solutions</p>
         </a>
