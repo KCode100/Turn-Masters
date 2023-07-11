@@ -1,6 +1,4 @@
 /*
-
-
 Inspiration: https://www.1001games.com/skill/stack-tower
 */
 
@@ -9,7 +7,7 @@ import GameModal from "@/components/GameModal";
 import TimeGuessGame from "@/components/TimeGuessGame";
 import TowerGame from "@/components/TowerGame";
 import { Game } from "@/types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const GAMES: Game[] = [
   {
@@ -18,7 +16,7 @@ const GAMES: Game[] = [
     description: "Stack the blocks to a tower. The higher and the straighter you stack the blocks, the more points you earn. Sloppy placement will cut off the blocks and making them smaller and smaller until it gets impossible to add more blocks."
   },
   {
-    name: '10 Seconds',
+    name: 'Countdown',
     component: TimeGuessGame,
     description: "10 Second Stopwatch Game is a test of your body's internal clock. Without any time keeping sources, stop the clock as close to 10.000 seconds as possible without going over."
   }

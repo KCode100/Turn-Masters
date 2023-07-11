@@ -1,0 +1,9 @@
+{
+  "name": "Turn Masters",
+  "short_name": "Turn Masters",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "green",
+  "theme_color": "blue",
+  "orientation": "portrait-primary"
+}
