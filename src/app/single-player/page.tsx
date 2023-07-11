@@ -9,7 +9,7 @@ import GameModal from "@/components/GameModal";
 import TimeGuessGame from "@/components/TimeGuessGame";
 import TowerGame from "@/components/TowerGame";
 import { Game } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const GAMES: Game[] = [
   {
@@ -27,15 +27,20 @@ const GAMES: Game[] = [
 const SinglePlayer = () => {
   const [currentGameIndex, setCurrentGameIndex] = useState<number>(-1);
   const [modalOpen, setModalOpen] = useState(true)
+  const [score, setScore] = useState(0)
+  const [newScore, setNewScore] = useState(0)
   const isFirstRound = currentGameIndex < 0
+  const isLastRound = currentGameIndex >= GAMES.length -1
 
-  function handleGameComplete(score: number) {
+  function handleGameComplete(points: number) {
     setModalOpen(true)
+    setNewScore(score + points)
   };
 
   function nextGame() {
     setModalOpen(false)
     setCurrentGameIndex((prevIndex) => prevIndex + 1);
+    setScore(newScore)
   }
 
   const CurrentGame = GAMES[currentGameIndex]?.component;
@@ -44,9 +49,10 @@ const SinglePlayer = () => {
     <div>
       {modalOpen && (
         <GameModal 
-          points={240}
+          points={{prevScore: score, newScore: newScore}}
           handleClick={nextGame}
           isFirstRound={isFirstRound}
+          isLastRound={isLastRound}
           nextRoundData={
             { 
               index: currentGameIndex + 2,

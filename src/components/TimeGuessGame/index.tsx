@@ -40,7 +40,9 @@ const TimeGuessGame = ({handleGameComplete}: GameProps) => {
   function handleEndTimer() {
     setIsPlaying(false)
     setGameComplete(true)
-    handleGameComplete(90)
+    setTimeout(() => {
+      handleGameComplete(90)
+    }, 1500);
   }
 
   return (
@@ -65,7 +67,7 @@ const TimeGuessGame = ({handleGameComplete}: GameProps) => {
           disabled={gameComplete}
         >
           <span className="relative block px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md">
-            { (isPlaying || gameComplete) ? 'STOP' : 'START' }
+            { (isPlaying || gameComplete) ? 'STOP' : 'START 10s TIMER' }
           </span>
         </button>
       </div>
