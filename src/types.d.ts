@@ -11,8 +11,9 @@ export type Game = {
 
 
 export type ModalProps = {
-  points?: number
+  points?: {prevScore: number, newScore: number}
   nextRoundData: Game
   handleClick: () => void
   isFirstRound?: boolean
+  isLastRound?: boolean
 }
