@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       <div>
-        <h1 className='text-3xl'>Turn Masters</h1>
-        <img className="w-10 h-10 rounded absolute right-4 top-4" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Default avatar" />
+        <h1 className='font-mono text-3xl'>Turn Masters</h1>
+        <img className="w-8 h-8 rounded absolute right-5 top-5" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Default avatar" />
       </div>
       <div className="z-10 w-full max-w-5xl items-stretch justify-between font-mono text-sm flex flex-col gap-4 ">
-        <Link href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+        <Link href="/single-player" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Single Player</h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">High Score: 844</p>
         </Link>
