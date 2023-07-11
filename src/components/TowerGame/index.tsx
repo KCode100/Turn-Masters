@@ -44,7 +44,7 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
     const canvas = canvasRef.current;
     const context = canvas!.getContext('2d');
     context!.fillText('Game over. Click to play again!', 10, 10);
-    handleGameComplete('You lost the Tower Game')
+    handleGameComplete(80)
   };
 
   const animate = () => {

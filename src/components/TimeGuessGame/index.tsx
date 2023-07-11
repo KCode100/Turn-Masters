@@ -40,7 +40,7 @@ const TimeGuessGame = ({handleGameComplete}: GameProps) => {
   function handleEndTimer() {
     setIsPlaying(false)
     setGameComplete(true)
-    handleGameComplete('timer game over')
+    handleGameComplete(90)
   }
 
   return (
