@@ -1,6 +1,7 @@
 import { ModalProps } from "@/types";
 import Link from "next/link";
 import CountUp from 'react-countup';
+import HighScores from "../HighScores";
 
 const GameModal = ({ points, nextRoundData, handleClick, isFirstRound, isLastRound }: ModalProps) => {
   return ( 
@@ -28,17 +29,7 @@ const GameModal = ({ points, nextRoundData, handleClick, isFirstRound, isLastRou
           {isLastRound && (
             <div className="fade-in text-left">
               <div className="text-lg pb-4">High Scores</div>
-              <ol className="list-decimal ml-4">
-                <li>Kivi</li>
-                <li>Chani</li>
-                <li>Zehava</li>
-                <li>Shani</li>
-                <li>Kivi</li>
-                <li>Chani</li>
-                <li>Zehava</li>
-                <li>Shani</li>
-                <li>Zehava</li>
-              </ol>
+              <HighScores />
               <Link href="/" className="relative w-full m-auto p-3 max-w-xs block overflow-hidden text-lg text-center mt-12 font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 text-white">Home</Link>
             </div>
           )}

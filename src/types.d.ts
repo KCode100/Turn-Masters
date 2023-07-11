@@ -17,3 +17,8 @@ export type ModalProps = {
   isFirstRound?: boolean
   isLastRound?: boolean
 }
+
+export type Scores = {
+  name: string
+  score: number
+}
