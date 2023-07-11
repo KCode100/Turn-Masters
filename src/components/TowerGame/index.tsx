@@ -1,6 +1,6 @@
 'use client'
 import { GameProps } from '@/types';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface Box {
   x: number;
@@ -16,6 +16,8 @@ interface Debris {
 
 const TowerGame= ({handleGameComplete}: GameProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [score, setScore] = useState(0)
+  
   const height = 50;
   let boxes: Box[] = [];
   boxes[0] = {
@@ -41,10 +43,10 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
 
   const gameOver = () => {
     mode = 'gameOver';
-    const canvas = canvasRef.current;
-    const context = canvas!.getContext('2d');
-    context!.fillText('Game over. Click to play again!', 10, 10);
-    handleGameComplete(80)
+    // const canvas = canvasRef.current;
+    // const context = canvas!.getContext('2d');
+    // context!.fillText('Game over. Click to play again!', 10, 10);
+    handleGameComplete(score)
   };
 
   const animate = () => {
@@ -52,7 +54,8 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
       const canvas = canvasRef.current;
       const context = canvas!.getContext('2d');
       context!.clearRect(0, 0, canvas!.width, canvas!.height);
-      context!.fillText('Score: ' + (current - 1).toString(), 10, 10);
+      setScore((current -1)* 10)
+      // context!.fillText('Score: ' + (current - 1).toString(), 10, 10);
       for (let n = 0; n < boxes.length; n++) {
         let box = boxes[n];
         context!.fillStyle = 'rgb(' + n * 8 + ',' + n * 18 + ',' + n * 16 + ')';
@@ -129,7 +132,8 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
 
     canvas!.onpointerdown = () => {
       if (mode === 'gameOver')
-        restart();
+        // restart();
+        return
       else {
         if (mode === 'bounce')
           mode = 'fall';
@@ -141,7 +145,12 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} width={300} height={600} />;
+  return (
+    <div>
+      <p className='fixed top-0 left-0 text-xl font-mono h-10 w-10 text-center opacity-50 flex items-center justify-center'>{score}</p>
+      <canvas ref={canvasRef} width={300} height={600} className='min-h-screen' />
+    </div>
+  )
 };
 
 export default TowerGame;
