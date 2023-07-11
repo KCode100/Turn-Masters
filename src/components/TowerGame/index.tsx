@@ -1,4 +1,5 @@
 'use client'
+import { GameProps } from '@/types';
 import React, { useEffect, useRef } from 'react';
 
 interface Box {
@@ -13,7 +14,7 @@ interface Debris {
   width: number;
 }
 
-const TowerGame: React.FC = () => {
+const TowerGame= ({handleGameComplete}: GameProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const height = 50;
   let boxes: Box[] = [];
@@ -43,6 +44,7 @@ const TowerGame: React.FC = () => {
     const canvas = canvasRef.current;
     const context = canvas!.getContext('2d');
     context!.fillText('Game over. Click to play again!', 10, 10);
+    handleGameComplete('You lost the Tower Game')
   };
 
   const animate = () => {

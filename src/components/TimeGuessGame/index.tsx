@@ -12,9 +12,9 @@ Player must not be able to view or feel any time keeping source. (Basically, pla
 
 'use client'
 import { useState, useEffect, FC } from 'react';
-import styles from './TimeGuessGame.module.scss'
+import { GameProps } from '@/types';
 
-const TimeGuessGame: FC = () => {
+const TimeGuessGame = ({handleGameComplete}: GameProps) => {
   const [time, setTime] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [gameComplete, setGameComplete] = useState(false)
@@ -40,6 +40,7 @@ const TimeGuessGame: FC = () => {
   function handleEndTimer() {
     setIsPlaying(false)
     setGameComplete(true)
+    handleGameComplete('timer game over')
   }
 
   return (
@@ -54,7 +55,7 @@ const TimeGuessGame: FC = () => {
           </>
         )}
         {gameComplete && (
-          <p className={`${styles.result} text-blue-500 block text-2xl text-center pt-4`}>{Math.abs((SECONDS_TO_GUESS - (time / 1000))).toFixed(2)} seconds out!</p>
+          <p className="slide-up text-blue-500 block text-2xl text-center pt-4">{Math.abs((SECONDS_TO_GUESS - (time / 1000))).toFixed(2)} seconds out!</p>
         )}
       </div>
       <div className='w-full'>
