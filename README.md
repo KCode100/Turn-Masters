@@ -155,3 +155,22 @@ You can then run the projects on a simulator from the UI, or you can run \
 npx cap run android
 
 To export the app as an APK, go to build -> Build APK. Then locate the test apk file, usually called “app-debug.apk”, which you can use to test. For production there is a bit of a longer process.
+
+
+## Custom status bar color on android
+
+In this file ```android/app/src/main/java/your/package/MainActivity.java``` you can add the following code and change "#f9f9f9" to whichever color the status bar should be.
+```
+package com.example.app;
+
+import com.getcapacitor.BridgeActivity;
+import android.os.Bundle;
+
+public class MainActivity extends BridgeActivity {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    getWindow().setStatusBarColor(android.graphics.Color.parseColor("#f9f9f9"));
+  }
+}
+```
