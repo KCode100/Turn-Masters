@@ -1,23 +1,8 @@
 'use client'
 import HighScores from "@/components/HighScores";
-import getHighScores from "@/utils/getHighScores";
 import Link from "next/link";
 
 const HighScoresPage = () => {
-  // async function setObject() {
-  //   await Preferences.set({
-  //     key: 'highScores',
-  //     value: JSON.stringify([
-  //       {
-  //         id: 1,
-  //         name: 'Max'
-  //       }
-  //     ])
-  //   });
-  // }
-
-
-
   return ( 
     <div className="container max-w-md m-auto p-4">
       <div className="relative">
