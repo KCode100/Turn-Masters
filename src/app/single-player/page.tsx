@@ -13,12 +13,12 @@ const GAMES: Game[] = [
   {
     name: 'Tower Stack',
     component: TowerGame,
-    description: "Stack the blocks to a tower. The higher and the straighter you stack the blocks, the more points you earn. Sloppy placement will cut off the blocks and making them smaller and smaller until it gets impossible to add more blocks."
+    description: "Stack the blocks to a tower. The higher and straighter you stack the blocks, the more points you earn. Sloppy placement will cut off the blocks and making them smaller and smaller until it gets impossible to add more blocks."
   },
   {
     name: 'Countdown',
     component: TimeGuessGame,
-    description: "10 Second Stopwatch Game is a test of your body's internal clock. Without any time keeping sources, stop the clock as close to 10.000 seconds as possible without going over."
+    description: "10 Second Stopwatch Game is a test of your body's internal clock. Without any time-keeping sources, stop the clock as close to 10.00s as possible without going over."
   }
 ];
 
@@ -32,6 +32,9 @@ const SinglePlayer = () => {
 
   function handleGameComplete(points: number) {
     setModalOpen(true)
+    console.log('to add: ', points);
+    console.log('total', score + points);
+    
     setNewScore(score + points)
   };
 

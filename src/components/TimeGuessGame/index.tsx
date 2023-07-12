@@ -11,7 +11,7 @@ Player must not be able to view or feel any time keeping source. (Basically, pla
 */
 
 'use client'
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect } from 'react';
 import { GameProps } from '@/types';
 
 const TimeGuessGame = ({handleGameComplete}: GameProps) => {
@@ -40,9 +40,21 @@ const TimeGuessGame = ({handleGameComplete}: GameProps) => {
   function handleEndTimer() {
     setIsPlaying(false)
     setGameComplete(true)
+    const score = calculateScore(time)
     setTimeout(() => {
-      handleGameComplete(90)
-    }, 1500);
+      handleGameComplete(score)
+    }, 1800);
+  }
+
+  function calculateScore(time: number): number {
+    if (time > 13000 || time < 7000) {
+      return 0;
+    }
+    const target = SECONDS_TO_GUESS * 1000
+    var closeness = Math.abs(time - target);
+    var calculatedScore = 100 - Math.floor(closeness / 100); // Higher score for closer values
+  
+    return calculatedScore
   }
 
   return (

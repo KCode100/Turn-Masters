@@ -19,6 +19,11 @@ export type ModalProps = {
 }
 
 export type Scores = {
-  name: string
+  id: string
+  name?: string
   score: number
+}
+
+export type newScoreProps = {
+  newScore?: number
 }
