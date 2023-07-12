@@ -14,6 +14,8 @@ interface Debris {
   width: number;
 }
 
+const POINTS_PER_BLOCK = 20
+
 const TowerGame= ({handleGameComplete}: GameProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [score, setScore] = useState(0)  
@@ -46,7 +48,7 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
     // const canvas = canvasRef.current;
     // const context = canvas!.getContext('2d');
     // context!.fillText('Game over. Click to play again!', 10, 10);
-    handleGameComplete((current-1) * 10)
+    handleGameComplete((current-1) * POINTS_PER_BLOCK)
   };
 
   const animate = () => {
@@ -54,7 +56,7 @@ const TowerGame= ({handleGameComplete}: GameProps) => {
       const canvas = canvasRef.current;
       const context = canvas!.getContext('2d');
       context!.clearRect(0, 0, canvas!.width, canvas!.height);
-      setScore((current-1)* 10)
+      setScore((current-1)* POINTS_PER_BLOCK)
       // context!.fillText('Score: ' + (current - 1).toString(), 10, 10);
       for (let n = 0; n < boxes.length; n++) {
         let box = boxes[n];

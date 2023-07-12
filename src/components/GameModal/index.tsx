@@ -16,7 +16,7 @@ const GameModal = ({ points, nextRoundData, handleClick, isFirstRound, isLastRou
           {!isLastRound && (
             <>
               <div className={!isFirstRound ? `fade-in` : ""}>
-                <h2 className="mb-2 text-xs text-gray-500">Round {nextRoundData.index}</h2>
+                <h2 className="mb-2 text-xs text-gray-500">Round {nextRoundData.index} Game rules</h2>
                 <h2 className="mb-3 font-mono text-2xl">{nextRoundData.name}</h2>
                 <p className="text-sm text-gray-500 pb-6">{nextRoundData.description}</p>
                 {/* <button type="button" className="text-red-500 bg-white rounded-lg border border-red-200 text-sm font-medium px-5 py-2.5">Quit</button> */}
@@ -30,7 +30,7 @@ const GameModal = ({ points, nextRoundData, handleClick, isFirstRound, isLastRou
             <div className="fade-in text-left">
               <div className="text-lg pb-4">High Scores</div>
               <HighScores newScore={points?.newScore} />
-              <Link href="/" className="relative w-full m-auto p-3 max-w-xs block overflow-hidden text-lg text-center mt-12 font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 text-white">Home</Link>
+              <Link href="/" className="relative w-full m-auto p-3 max-w-xs block overflow-hidden text-lg text-center mt-12 font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 text-white">Play Again</Link>
             </div>
           )}
         </div>
