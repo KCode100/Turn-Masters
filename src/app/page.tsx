@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
-      <div className='relative w-full text-center'>
+      <div className='relative w-full text-left pl-2'>
         <h1 className='font-mono text-2xl mt-2'>Turn Masters</h1>
         {/* <img className="w-8 h-8 rounded absolute right-0 top-2" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Default avatar" /> */}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 rounded absolute right-0 top-2">

@@ -14,17 +14,22 @@ const GAMES: Game[] = [
   {
     name: 'Tower Stack',
     component: TowerGame,
-    description: "Stack the blocks to a tower. The higher and straighter you stack the blocks, the more points you earn. Sloppy placement will cut off the blocks and making them smaller and smaller until it gets impossible to add more blocks."
+    description: "Stack as many blocks as you can into a straight tower."
   },
   {
     name: 'Countdown',
     component: TimeGuessGame,
-    description: "10 Second Stopwatch Game is a test of your body's internal clock. Without any time-keeping sources, stop the clock as close to 10.00s as possible without going over."
+    description: "Stop the clock as close to 10.00 seconds as possible."
   },
   {
     name: 'Math Game',
     component: SumGame,
-    description: "You have 15 seconds to answer the maths question"
+    description: "You have 15 seconds to answer a maths question."
+  },
+  {
+    name: 'Phone Number',
+    component: SumGame,
+    description: "Memorize a phone number. When you're done dialing the number, click on the call button to confirm."
   }
 ];
 

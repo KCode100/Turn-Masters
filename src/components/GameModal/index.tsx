@@ -16,13 +16,13 @@ const GameModal = ({ points, nextRoundData, handleClick, isFirstRound, isLastRou
           {!isLastRound && (
             <>
               <div className={!isFirstRound ? `fade-in` : ""}>
-                <h2 className="mb-2 text-xs text-gray-500">Round {nextRoundData.index} Game rules</h2>
+                <h2 className="mb-2 text-xs text-gray-500">Round {nextRoundData.index}</h2>
                 <h2 className="mb-3 font-mono text-2xl">{nextRoundData.name}</h2>
                 <p className="text-sm text-gray-500 pb-6">{nextRoundData.description}</p>
                 {/* <button type="button" className="text-red-500 bg-white rounded-lg border border-red-200 text-sm font-medium px-5 py-2.5">Quit</button> */}
               </div>
               <button onClick={() => handleClick()} type="button" className="w-full text-white bg-gradient-to-br from-green-400 to-blue-600 font-medium rounded-lg text-sm items-center px-5 py-3.5 text-center ml-2">
-                {isFirstRound ? 'Start' : 'Next Round'}
+                {isFirstRound ? 'Start' : 'Continue'}
               </button>
             </>
           )}
