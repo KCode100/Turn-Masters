@@ -25,13 +25,13 @@ const NumbersPending = () => (
 )
 
 const SumGame = ({handleGameComplete}: GameProps) => {
-  const [text, setText] = useState<string>("Remaining")
   const [number1, setNumber1] = useState<number | null>(null)
   const [number2, setNumber2] = useState<number | null>(null)
   const [isSumTrue, setIsSumTrue] = useState<boolean>(true)
   const [correctSum, setCorrectSum] = useState<number | null>(null)
   const [wrongSum, setWrongSum] = useState<number | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
+  const [gameComplete, setGameComplete] = useState<boolean>(false)
 
   useEffect(() => {
     if (!number1 && !number2) {
@@ -47,17 +47,14 @@ const SumGame = ({handleGameComplete}: GameProps) => {
   }, [number1, number2])
 
   const renderTime = ({ remainingTime }: any) => {
-    if (remainingTime <= 5) {
-      setText('Hurry Up!')
-    }
-
     if (remainingTime === 0) {
-      return <div>Too late</div>;
+      handleGameComplete(0)
+      setGameComplete(true)
     }
   
     return (
       <div>
-        <div className='text-center text-sm'>{text}</div>
+        <div className='text-center text-sm'>Remaining</div>
         <div className={`${remainingTime <= 5 ? 'text-red-500' : ''} text-center text-4xl py-2`}>{remainingTime}</div>
         <div className='text-center text-sm'>seconds</div>
       </div>
@@ -70,6 +67,7 @@ const SumGame = ({handleGameComplete}: GameProps) => {
     } else {
       handleGameComplete(0)
     }
+    setGameComplete(true)
   }
   
   console.log(isSumTrue);
@@ -83,7 +81,7 @@ const SumGame = ({handleGameComplete}: GameProps) => {
           `${number1} + ${number2} = ${isSumTrue ? correctSum : wrongSum}`
         )}
       </div>
-      {!loading && (
+      {!loading && !gameComplete && (
         <CountdownCircleTimer
           isPlaying
           duration={15}
