@@ -4,6 +4,7 @@ Inspiration: https://www.1001games.com/skill/stack-tower
 
 'use client'
 import GameModal from "@/components/GameModal";
+import PhoneNumberGame from "@/components/PhoneNumberGame";
 import SumGame from "@/components/SumGame";
 import TimeGuessGame from "@/components/TimeGuessGame";
 import TowerGame from "@/components/TowerGame";
@@ -28,7 +29,7 @@ const GAMES: Game[] = [
   },
   {
     name: 'Phone Number',
-    component: SumGame,
+    component: PhoneNumberGame,
     description: "Memorize a phone number. When you're done dialing the number, click on the call button to confirm."
   }
 ];
