@@ -27,6 +27,8 @@ const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
   console.log(numbersClicked);
 
   function checkAnswer() {
+    console.log('checking answer')
+    
     setScore(numbersClicked === numberToGuess ? 'Correct! 100 points!' : 'Nope, sorry.')
   }
 
@@ -60,11 +62,11 @@ const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
         <div className="absolute bottom-[30%] left-[50%] translate-x-[-50%] opacity-40 w-[70%] bg-green-200 m-auto">
           <button className="block m-auto bg-red-500 w-1/4 rounded-full aspect-square" onClick={()=>handleClick("0")}></button>
         </div>
-        <div className="absolute bottom-[20%] left-[50%] translate-x-[-50%] opacity-40 w-[70%] bg-green-200 m-auto">
+        <div className="z-20 absolute bottom-[20%] left-[50%] translate-x-[-50%] opacity-40 w-[70%] bg-green-200 m-auto">
           <button className="block m-auto bg-red-500 w-1/4 rounded-full aspect-square" onClick={checkAnswer}></button>
         </div>
-        <div className="absolute bottom-[20%] left-[75%] translate-x-[-50%] opacity-40 w-[70%] bg-green-200 m-auto">
-          <button className="block m-auto bg-red-500 w-1/4 rounded-full aspect-square" onClick={handleDelete}></button>
+        <div className="z-30 absolute bottom-[20%] left-[73%] translate-x-[-50%] opacity-40 w-[15%] bg-blue-200 m-auto aspect-square">
+          <button className="block m-auto bg-red-500 w-full rounded-full aspect-square" onClick={handleDelete}></button>
         </div>
       </div>
     </div>
