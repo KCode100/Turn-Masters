@@ -1,12 +1,11 @@
+/*
+Code for this game needs to be improved. Do we need useStates and useEffects?
+*/
+
 'use client'
 import { GameProps } from '@/types';
 import { useEffect, useState } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
-
-/*
-Watch and memorize this number phone, then click on "NEXT" to tape the number.
-When you're done dialing the number, click on the call button to confirm.
-*/
 
 function getRandomThreeDigitNumber() {
   return Math.floor(Math.random() * 900) + 100;
