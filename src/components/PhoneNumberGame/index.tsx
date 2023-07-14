@@ -1,5 +1,6 @@
 'use client'
 
+import { GameProps } from "@/types";
 import { useEffect, useState } from "react";
 
 function generateRandomNumber():string {
@@ -13,9 +14,10 @@ function generateRandomNumber():string {
   return result;
 }
 
-const PhoneNumberGame = () => {
+const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
   const [numbersClicked, setNumbersClicked] = useState<string>("")
   const [numberToGuess, setNumberToGuess] = useState<string>("")
+  const [score, setScore] = useState<number | string>(0)
 
   function handleClick(btnClicked: string) {
     setNumbersClicked(prev => prev += btnClicked)
@@ -25,15 +27,12 @@ const PhoneNumberGame = () => {
   console.log(numbersClicked);
 
   function checkAnswer() {
-    console.log(numbersClicked === numberToGuess);
-    console.log('alo');
-    
+    setScore(numbersClicked === numberToGuess ? 'Correct! 100 points!' : 'Nope, sorry.')
   }
 
   function handleDelete() {
     const removeLastDigit = numbersClicked.slice(0, -1);
     setNumbersClicked(removeLastDigit)
-    console.log('alo');
   }
 
   useEffect(() => {
@@ -43,7 +42,8 @@ const PhoneNumberGame = () => {
   return ( 
     <div className="w-full">
       <h1>{numberToGuess}</h1>
-      <button onClick={checkAnswer}>Check</button>
+      <button onClick={checkAnswer} className="border-gray-500 border rounded-lg p-1">Check</button>
+      {score}
       <div className="relative max-w-xs m-auto">
         <img className="block m-auto max-h-screen" src="/phone-keyboard.png" alt="phone keyboard" />
         <div className="grid grid-cols-3 gap-x-4 gap-y-2.5 place-content-start absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-38%] opacity-40 w-[60%] bg-green-200 m-auto" style={{aspectRatio: "200/320"}}>
