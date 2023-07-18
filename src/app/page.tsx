@@ -14,7 +14,8 @@ export default function Home() {
       <div className="z-10 w-full max-w-5xl items-stretch justify-between font-mono text-sm flex flex-col gap-4 ">
         <Link href="/single-player" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Single Player</h5>
-          <p className="text-xs font-normal text-gray-700 dark:text-gray-400">Compete for points over 5 rounds</p>
+          <p className="text-xs font-normal text-gray-700 dark:text-gray-400">Compete for points over 4 rounds:</p>
+          <p className="text-xs font-normal text-gray-700 dark:text-gray-400 mt-2">Tower - Time Guess - Sum - Phone Number</p>
         </Link>
         <Link href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Multi Player</h5>
