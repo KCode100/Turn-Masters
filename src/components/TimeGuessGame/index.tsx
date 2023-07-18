@@ -75,7 +75,7 @@ const TimeGuessGame = ({handleGameComplete}: GameProps) => {
       <div className='w-full'>
         <button
           onClick={ isPlaying ? handleEndTimer : handleStartTimer }
-          className="relative w-full m-auto p-0.5 max-w-xs block overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600"
+          className="relative w-full m-auto p-0.5 max-w-xs block overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-500 to-purple-500"
           disabled={gameComplete}
         >
           <span className="relative block px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md">

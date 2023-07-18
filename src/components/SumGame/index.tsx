@@ -91,10 +91,10 @@ const SumGame = ({handleGameComplete}: GameProps) => {
         </CountdownCircleTimer>
       )}
       <div className="flex items-center justify-center gap-4 w-full">
-        <button onClick={()=>handleAnswer(false)} className="w-full shadow-sm relative m-auto p-0.5 block overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 to-pink-600">
+        <button onClick={()=>handleAnswer(false)} className="w-full shadow-sm relative m-auto p-0.5 block overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-600 to-red-400">
           <span className="relative block px-5 py-1.5 bg-white rounded-md">False</span>
         </button>
-        <button onClick={()=>handleAnswer(true)} className="w-full shadow-sm relative m-auto p-0.5 block overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600">
+        <button onClick={()=>handleAnswer(true)} className="w-full shadow-sm relative m-auto p-0.5 block overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-600 to-blue-400">
           <span className="relative block px-5 py-1.5 bg-white rounded-md">True</span>
         </button>
       </div>

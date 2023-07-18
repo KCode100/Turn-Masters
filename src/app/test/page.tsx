@@ -1,4 +1,4 @@
-import PhoneNumberGame from "@/components/PhoneNumberGame";
+import PhoneNumberGame from "@/components/PhoneNumberGame/page";
 
 const Test = () => {
     return ( 
