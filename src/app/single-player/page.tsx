@@ -4,7 +4,7 @@ Inspiration: https://www.1001games.com/skill/stack-tower
 
 'use client'
 import GameModal from "@/components/GameModal";
-import PhoneNumberGame from "@/components/PhoneNumberGame";
+import PhoneNumberGame from "@/components/PhoneNumberGame/page";
 import SumGame from "@/components/SumGame";
 import TimeGuessGame from "@/components/TimeGuessGame";
 import TowerGame from "@/components/TowerGame";
