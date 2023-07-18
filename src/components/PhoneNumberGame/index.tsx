@@ -18,7 +18,7 @@ const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
   const [numbersClicked, setNumbersClicked] = useState<string>("")
   const [numberToGuess, setNumberToGuess] = useState<string>("")
   const [dialogOpen, setDialogOpen] = useState<boolean>(true)
-
+  
   function handleClick(btnClicked: string) {
     setNumbersClicked(prev => prev += btnClicked)
   }
@@ -48,7 +48,7 @@ const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
       <div className="flex justify-center items-center p-4 h-screen">
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-sm">
           <div className="p-6 text-center">
-            <h3 className="mb-5 text-xl font-mono">{numberToGuess}</h3>
+            <h3 className="mb-5 text-xl font-mono">{`${numberToGuess.substring(0, 5)}-${numberToGuess.substring(5, 8)}-${numberToGuess.substring(8)}`}</h3>
             <h4>Take the time you need to memorize it and start when you are ready</h4>
             <button type="button" onClick={toggleNumberDialog} className="mt-6 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Go!</button>
           </div>
