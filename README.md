@@ -37,11 +37,11 @@ Run the following commands in the root of your codebase.
 
 npm init @capacitor/app
 
-npm i @capacitor/core
-
 npm i -D @capacitor/cli
 
 npx cap init
+
+npm i @capacitor/core
 
 npm i @capacitor/android @capacitor/ios
 
