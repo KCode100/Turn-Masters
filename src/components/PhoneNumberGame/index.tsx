@@ -17,7 +17,7 @@ function generateRandomNumber():string {
 const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
   const [numbersClicked, setNumbersClicked] = useState<string>("")
   const [numberToGuess, setNumberToGuess] = useState<string>("")
-  const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+  const [dialogOpen, setDialogOpen] = useState<boolean>(true)
 
   function handleClick(btnClicked: string) {
     setNumbersClicked(prev => prev += btnClicked)
@@ -39,7 +39,6 @@ const PhoneNumberGame = ({handleGameComplete}: GameProps) => {
 
   useEffect(() => {
     setNumberToGuess(generateRandomNumber())
-    toggleNumberDialog()
   }, [])
 
   console.log(numberToGuess);
